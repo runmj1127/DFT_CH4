@@ -18,7 +18,7 @@ END_PATH_INPUT
 
 BEGIN_ENGINE_INPUT
 &CONTROL
-    pseudo_dir = "C:\Users\User\.nanolabo\.pseudopot"
+    pseudo_dir = "./"
     verbosity  = "low"
 /
 
@@ -415,5 +415,6 @@ END_POSITIONS
 
 END_ENGINE_INPUT
 END
+
 
 
