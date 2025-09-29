@@ -1,0 +1,61 @@
+&CONTROL
+    calculation   = "relax"
+    forc_conv_thr =  1.16681e-03
+    max_seconds   =  172800.0
+    nstep         =  100
+    outdir        = "./"
+    prefix        = "espresso"
+    pseudo_dir    = "./"
+    title         = "H2O(Optimize)"
+    verbosity     = "low"
+    wf_collect    = .TRUE.
+    wfcdir        = "./"
+/
+
+&SYSTEM
+    a           =  20.0
+    degauss     =  0.01
+    ecutrho     =  225.0
+    ecutwfc     =  25.0
+    ibrav       =  1
+    nat         =  3
+    ntyp        =  2
+    occupations = "smearing"
+    smearing    = "gaussian"
+/
+
+&ELECTRONS
+    conv_thr         =  2.0e-5
+    diagonalization  = "david"
+    electron_maxstep =  200
+    mixing_beta      =  0.2
+    startingpot      = "atomic"
+    startingwfc      = "atomic+random"
+/
+
+&INPUTPP
+    filplot        = "espresso.pp"
+    outdir         = "./"
+    plot_num       =  0
+    prefix         = "espresso"
+    spin_component =  0
+/
+
+&PLOT
+    fileout       = "espresso.cube"
+    iflag         =  3
+    output_format =  6
+/
+
+K_POINTS {automatic}
+ 6  6  6  0 0 0
+
+ATOMIC_SPECIES
+O      15.99940  O.pbe-rrkjus.UPF
+H       1.00794  H.pbe-rrkjus.UPF
+
+ATOMIC_POSITIONS {angstrom}
+O      10.034800   9.603400  10.000600
+H      10.744000  10.265200   9.925400
+H       9.221200  10.131400  10.074000
+
